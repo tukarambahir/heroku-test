@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Test-heroku-Tukaram';
+  email = ''
+  password = ''
+
+
+  onLogin(){
+    
+  }
 }
