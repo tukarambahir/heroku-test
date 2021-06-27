@@ -11,9 +11,12 @@ app.use(bodyParser.urlencoded({ extended:true}))
 
 app.use(express.static(__dirname + '/dist/Test-heroku-Tukaram'));
 
-app.get('/test',(req,res) =>
-    res.send('response from backen')
-);
+app.get('/test',(req,res) =>{
+let obj ={
+    res:'response from backen'
+}
+    res.send(Obj)
+});
 
 app.get('/*', function(req,res) {
     
