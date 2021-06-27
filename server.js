@@ -6,7 +6,10 @@ const app = express();
 
 
 app.use(express.static(__dirname + '/dist/Test-heroku-Tukaram'));
-app.get('/*', function(req,res) {res.sendFile(path.join(__dirname+'/dist/Test-heroku-Tukaram/index.html'));
+app.get('/*', function(req,res) {
+    
+    console.log("port  "+ process.env.PORT)
+    res.sendFile(path.join(__dirname+'/dist/Test-heroku-Tukaram/index.html'));
 });
 
 // Serve only the static files form the dist directory

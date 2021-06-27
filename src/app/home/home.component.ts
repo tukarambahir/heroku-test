@@ -16,9 +16,14 @@ export class HomeComponent implements OnInit {
   test(){
     // this.testService.Test().subscribe(res=>{
     //   console.log(res)
-    console.log(this.testService.Test())
-    
-
+    this.testService.Test().subscribe(res=>{
+      console.log("resp "+res)
+    })
+  }
+  testing(){
+    this.testService.Testing().subscribe(res=>{
+      console.log("resp "+res)
+    })
   }
 
 
