@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   test(){
     // this.testService.Test().subscribe(res=>{
     //   console.log(res)
-    this.testService.Test().subscribe(res=>{
+    this.testService.Test().subscribe((res:any)=>{
       console.log("resp "+res)
     })
   }
