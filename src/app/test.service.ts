@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
@@ -8,7 +9,7 @@ export class TestService {
 
   url = '/test'
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
   Test(){
     return "response from service"
     // return this.httpClient.get(this.url);
