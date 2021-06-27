@@ -4,12 +4,17 @@ const path = require('path');
 
 const app = express();
 
-// Serve only the static files form the dist directory
-app.use(express.static('./dist/Test-heroku-Tukaram'));
 
-app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/Test-heroku-Tukaram/'}),
-);
+app.use(express.static(__dirname + '/dist/Test-heroku-Tukaram'));
+app.get('/*', function(req,res) {res.sendFile(path.join(__dirname+'/dist/Test-heroku-Tukaram/index.html'));
+});
+
+// Serve only the static files form the dist directory
+// app.use(express.static('./dist/Test-heroku-Tukaram'));
+
+// app.get('/*', (req, res) =>
+//     res.sendFile('index.html', {root: 'dist/Test-heroku-Tukaram/'}),
+// );
 
 app.get('/test',(req,res) =>
     res.send('response from backen')

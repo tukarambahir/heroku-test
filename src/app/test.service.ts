@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class TestService {
 
-  url = '/test'
+  url = 'https://test-heroku-basic-app.herokuapp.com/test'
 
   constructor(private httpClient: HttpClient) { }
   Test(){
