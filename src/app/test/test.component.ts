@@ -14,9 +14,10 @@ export class TestComponent implements OnInit {
   }
 
   test(){
-    this.testService.Test().subscribe(res=>{
-      console.log(res)
-    })
+    // this.testService.Test().subscribe(res=>{
+    //   console.log(res)
+    console.log(this.testService.Test())
+    
 
   }
 }
