@@ -15,7 +15,7 @@ app.get('/test',(req,res) =>{
 let obj ={
     res:'response from backen'
 }
-    res.send(Obj)
+    res.send(obj)
 });
 
 app.get('/*', function(req,res) {
