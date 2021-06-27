@@ -11,7 +11,7 @@ export class TestService {
 
   constructor(private httpClient: HttpClient) { }
   Test(){
-    return "response from service"
-    // return this.httpClient.get(this.url);
+    // return "response from service"
+    return this.httpClient.get(this.url);
   }
 }

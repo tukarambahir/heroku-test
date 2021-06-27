@@ -12,7 +12,7 @@ app.get('/*', (req, res) =>
 );
 
 app.get('/test',(req,res) =>
-    res.send('response from backend')
+    res.send('response from backen')
 );
 
 // Start the app by listening on the default Heroku port
