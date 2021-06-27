@@ -8,9 +8,9 @@ export class TestService {
 
   url = '/test'
 
-  constructor(private httpClient: HttpClient) { }
+  constructor() { }
   Test(){
-    return "response from service "
+    return "response from service"
     // return this.httpClient.get(this.url);
   }
 }
