@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class TestService {
 
   urlt = 'https://test-heroku-basic-app.herokuapp.com/test'
-  urltng = 'https://localhost:8080/test'
+  urltng = 'https://test-heroku-basic-app.herokuapp.com/signin'
 
   constructor(private httpClient: HttpClient) { }
   Test(){
