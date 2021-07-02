@@ -2,11 +2,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const {prohairesis} = require('prohairesis')
-const env  = require('./env')
-
-console.log(env)
-const db = new prohairesis(env.CLearDB)
+const db = require('./db');
 const app = express();
 
 app.use(bodyParser.json())
