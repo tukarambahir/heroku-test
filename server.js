@@ -18,12 +18,6 @@ let obj ={
     res.send(obj)
 });
 
-app.get('/*', function(req,res) {
-    
-    console.log("port  "+ process.env.PORT)
-    res.sendFile(path.join(__dirname+'/dist/Test-heroku-Tukaram/index.html'));
-});
-
 
 
 app.get('/signin', (request, response) => {
@@ -38,6 +32,16 @@ app.get('/signin', (request, response) => {
     })
   })
   
+
+app.get('/*', function(req,res) {
+    
+    console.log("port  "+ process.env.PORT)
+    res.sendFile(path.join(__dirname+'/dist/Test-heroku-Tukaram/index.html'));
+});
+
+
+
+
 
 
 
