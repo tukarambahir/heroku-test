@@ -4,11 +4,30 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const db = require('./db');
 const app = express();
-const cors = require('cors')
+// const cors = require('cors')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended:true}))
 
-app.use(cors('https://ftw-ng-nodejs.herokuapp.com'))
+
+// app.use(cors('https://ftw-ng-nodejs.herokuapp.com'))
+// Listen on a specific host via the HOST environment variable
+const host = process.env.HOST || 'us-cdbr-east-04.cleardb.com';
+// Listen on a specific port via the PORT environment variable
+const port = process.env.PORT || 8080;
+
+
+
+// cors anywhere
+const cors_proxy = require('cors-anywhere');
+cors_proxy.createServer({
+    originWhitelist: [], // Allow all origins
+    requireHeader: ['origin', 'x-requested-with'],
+    removeHeaders: ['cookie', 'cookie2']
+}).listen(port, host, function() {
+    console.log('Running CORS Anywhere on ' + host + ':' + port);
+});
+
+
 
 app.use(express.static(__dirname + '/dist/Test-heroku-Tukaram'));
 
