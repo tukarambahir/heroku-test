@@ -8,14 +8,30 @@ const cors = require('cors')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended:true}))
 
-app.use(cors())
+
+const forceSSL = function() {
+    return function (req, res, next) {
+      if (req.headers['x-forwarded-proto'] !== 'https') {
+        return res.redirect(
+         ['https://', req.get('Host'), req.url].join('')
+        );
+      }
+      next();
+    }
+  }
+  // Instruct the app
+  // to use the forceSSL
+  // middleware
+  app.use(forceSSL());
+
+app.use(cors('*'))
 // app.use(cors('https://ftw-ng-nodejs.herokuapp.com'))
 
 app.use(express.static(__dirname + '/dist/Test-heroku-Tukaram'));
 
 app.get('/test',(req,res) =>{
 let obj ={
-    res:'response from backend'
+    data:'response from backend'
 }
     res.send(obj)
 });
