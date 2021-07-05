@@ -42,6 +42,17 @@ app.get('/signin', (request, response) => {
   })
   
 
+  app.get('/', function(req, res, next) {
+    // Handle the get for this route
+    response.send({status: 'success', data:'inside / route get method' })
+  });
+  
+  app.post('/', function(req, res, next) {
+   // Handle the post for this route
+   response.send({status: 'success', data:'inside / route post method' })
+
+  });
+
 app.get('/*', function(req,res) {
     
     console.log("port  "+ process.env.PORT)
