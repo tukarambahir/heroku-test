@@ -9,13 +9,20 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended:true}))
 
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://test-ng-nodejs-mysql.herokuapp.com"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "https://test-ng-nodejs-mysql.herokuapp.com"); // update to match the domain you will make the request from
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
-app.use(cors('*'))
+const corsOptions ={
+  origin:'https://test-ng-nodejs-mysql.herokuapp.com', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
+
+// app.use(cors('*'))
 // app.use(cors('https://ftw-ng-nodejs.herokuapp.com'))
 
 app.use(express.static(__dirname + '/dist/Test-heroku-Tukaram'));
